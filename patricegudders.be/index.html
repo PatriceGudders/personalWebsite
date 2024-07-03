@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="icons/icons8-code-kleur-96.png">
+    <script src="javascript/index.js"></script>
+    <title>Patrice Gudders</title>
+</head>
+
+<body>
+    <!--Zie javascript voor uitleg functie:
+<body onscroll="verdikBorderHeader()">-->
+    <div id="homepage">
+        <!-- Begin van de header, deze blijft staan wanneer je pagina scrolt -->
+        <div class="achtergrondAfbeelding" id="achtergrondBegin">
+            <header id="hoofding">
+
+                <!-- naam en functie met witruimte (via css) ertussen -->
+                <div>
+                    <span id="naam"><a href="index.html">Patrice Gudders</a></span>
+                    <span id="functie">FULL STACK DEVELOPER</span>
+                </div>
+
+
+                <!-- Begin van navigatiebalk rechtsboven in de header -->
+                <div>
+                    <nav>
+                        <ul>
+                            <li><a class="nav_item" href="#sec_about">about</a></li>
+                            <li><a class="nav_item" href="#sec_portfolioOverzicht">portfolio</a></li>
+                            <li><a class="nav_item" href="#sec_skills">skills</a></li>
+                            <li><a class="nav_item" href="#sec_contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </header>
+
+
+
+            <!-- Begin van sectie "about" met afbeelding links en tekst rechts -->
+            <section id="sec_about">
+                <div class="row" id="rowDesktop">
+                    <div class="col-12 colTekst_about">
+                        <aside id="tekst_about">
+                            <h2><img src="icons/information.png" class="icoonKlein">ABOUT</h2>
+                            <p>
+                                Hello, my name is <strong>Patrice</strong>.<br>
+                                I'm a junior full stack developer.<br><br>
+                                This website gives a short introduction into my work and skills.<br>
+                                I aspire to accomplish additional projects and elevate my expertise. <br><br>
+
+                                In the meantime if you find yourself in desperate need of a driven professional... Maybe
+                                I can help.
+                            </p>
+                        </aside>
+                    </div>
+                    <div class="col-12" id="divAfbeeldingAbout">
+                        <a href="images/cv Patrice Gudders.pdf" target="_blank" rel="noopener noreferrer">
+                            <img src="images/man_website.png" id="afbeeldingAbout"
+                                alt="Afbeelding met voorstelling van website">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Begin van sectie "portfolio"  -->
+        <section id="sec_portfolioOverzicht">
+            <div class="row">
+                <div class="col-12 weergave">
+                    <h2><img src="icons/verified.png" class="icoonKlein">PORTFOLIO</h2>
+                </div>
+            </div>
+            <div class="row demo">            
+                <div class="col-6 weergave" id="titelDemoEen">
+                    <h3>Flower Shop</h3>
+                    <p>designed in HTML5 & CSS3
+                    <p>
+                </div>
+                <div class="col-6 weergave" id="linkDemoEen">
+                    <a href="demos/plantenshop/plantenshop.html" target="_blank" rel="noopener noreferrer"><img
+                            id="afbeeldingPlanten" src="images/screen_plantenshop3.png"></a>
+                </div>
+            </div>
+            <div class="row demo">
+                <div class="col-6 weergave" id="linkDemoTwee">
+                    <a href="demos/groentenwinkel/groentenwinkel.html" target="_blank" rel="noopener noreferrer"><img
+                            id="afbeeldingGroenten" src="images/screen_groentenwinkel3.png"></a>
+                </div>
+                <div class="col-6 weergave" id="titelDemoTwee">
+                    <h3>Grocery Store</h3>
+                    <p>made interactive with JavaScript</p>
+                </div>
+            </div>
+            <div class="row demo">
+                <div class="col-6 weergave" id="titelDemoDrie">
+                    <h3>Woodfactory</h3>
+                    <p>made interactive with JavaScript</p>
+                </div>
+                <div class="col-6 weergave" id="linkDemoDrie">
+                    <a href="demos/woodfactory/woodfactory.html" target="_blank" rel="noopener noreferrer"><img
+                            id="afbeeldingWood" src="images/screen_woodfactory3.png"></a>
+                </div>
+            </div>
+            <div class="row demo">
+                <div class="col-6 weergave" id="linkDemoVier">
+                    <a href="demos/scrumPrularia/overzicht.php" target="_blank" rel="noopener noreferrer"><img
+                            id="afbeeldingScrum" src="images/screen_scrumPrularia2.png"></a>
+                </div>
+                <div class="col-6 weergave" id="titelDemoVier">
+                    <h3>Webshop Prularia</h3>
+                    <p>Scrum-project made in PHP, JavaScript, HTML5 & CSS3</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Begin van sectie "skills"  -->
+        <section id="sec_skills" class="weergave">
+            <div class="row">
+                <div class="col-12">
+                    <h2><img src="icons/settings.png" class="icoonKlein">SKILLS</h2>
+                </div>
+            </div>
+            <div class="row gridContainer">
+                <div class="col-1 gridItem1"></div>
+                <div class="col-2 gridItem2">
+                    <img src="icons/html-5.png">
+                </div>
+                <div class="col-2 gridItem3">
+                    <img src="icons/css-3.png">
+                </div>
+                <div class="col-2 gridItem4">
+                    <img src="icons/js.png">
+                </div>
+                <div class="col-2 gridItem5">
+                    <img src="icons/php.png">
+                </div>
+                <div class="col-2 gridItem6">
+                    <img src="icons/mysql.png">
+                </div>
+                <div class="col-1 gridItem7"></div>
+            </div>
+        </section>
+
+
+        <!-- Begin van sectie "contact"  -->
+        <div class="achtergrondAfbeelding" id="achtergrondEinde">
+            <section id="sec_contact" class="weergave">
+                <h2 hidden>CONTACT ME</h2>
+                <div class="row">
+                    <div class="col-6" id="connect">
+                        <h1>LET'S</h1>
+                        <h1>CONNECT</h1>
+                    </div>
+                    <div class="col-6" id="mail">
+                        <h1><a href="mailto:gudderspatrice@hotmail.com">gudderspatrice@hotmail.com</a></h1>
+                        <a href="https://github.com/PatriceGudders" target="_blank" rel="noopener noreferrer"><img
+                                src="icons/icons8-github-light-96.png"></a>
+                        <a href="https://linkedin.com/in/patrice-gudders" target="_blank" rel="noopener noreferrer"><img
+                                src="icons/icons8-linkedin-light-96.png"></a>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!--Credits link toevoegen voor afbeelding, iconen, scrum-->
+            <footer>
+                <p id="openCredits" onclick="openCredits(); vervaagHomepage()">credits</p>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!--Sidebar voor weergave van credits-->
+    <div id="sec_credits">
+        <div class="titel">
+            <h1>CREDITS</h1>
+            <img id="sluitCredits" onclick="sluitCredits(); resetHomepage()" src="icons/close-100.png">
+        </div>
+        <div class="tekst">
+            <div>
+                <h4>Images:</h4>
+                <p><a href="https://www.drawkit.com/" target="_blank" rel="noopener noreferrer">by Drawkit</a>
+                </p>
+                <p><a href="http://www.freepik.com" target="_blank" rel="noopener noreferrer">by Freepik</a></p>
+            </div>
+            <div>
+                <h4>Icons:</h4>
+                <p><a href="https://icons8.com/icons/" target="_blank" rel="noopener noreferrer">by Icons8</a>
+                </p>
+                <p><a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer">by Flaticon</a>
+                </p>
+            </div>
+            <div>
+                <h4>Fonts:</h4>
+                <p>Migra</p>
+            </div>
+            <div>
+                <h4>Website:</h4>
+                <p>Made in JavaScript, HTML5 & CSS3</p>
+                <p>Work in constant progress</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

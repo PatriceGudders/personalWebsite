@@ -1,0 +1,681 @@
+@font-face {
+    font-family: "migra";
+    src: url('migra/Migra-Extralight.eot');
+    src: url('migra/Migra-Extralight.eot') format('embedded-opentype'),
+        url('migra/Migra-Extralight.woff2') format('woff2'),
+        url('migra/Migra-Extralight.woff') format('woff'),
+        url('migra/Migra-Extralight.ttf') format('truetype');
+}
+
+/*Variabelen*/
+:root {
+    --tekstkleur: #cccccc;
+    --achtergrondkleurEen: #014ABD;
+    --schaduwkleurEen: #0e306673;
+    --tekstfontEen: monospace;
+    --tekstfontTwee: 'migra';
+    --marginLinksRechts: 2vw;
+    --marginBoven: 2vw;
+    --marginOnder: 1.7vw;
+    --paddingBoven: 1.7vw;
+    --paddingOnder: 1.5vw;
+    --negPaddingOnder: -1.5vw;
+    --negPaddingBoven: -1.7vw;
+    --negMarginOnder: -1.7vw;
+    --negMarginBoven: -2vw;
+    --negMarginLinksRechts: -2vw;
+}
+
+
+
+/*CSS resets*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: var(--tekstkleur);
+}
+
+#sec_about .icoonKlein,
+#sec_skills .icoonKlein,
+#sec_portfolioOverzicht .icoonKlein {
+    width: 2rem;
+    background-color: var(--tekstkleur);
+    border-radius: 0%;
+}
+
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /*border: 1px solid red;*/
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+
+
+/*Afbeelding als achtergrond voor begin en einde van pagina aangepast aan schermgrootte*/
+
+#achtergrondBegin {
+    background: url(../images/blue-orange-header.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: var(--achtergrondkleurEen);
+    /*Laat achtergrondafbeelding buiten div komen over volledige schermbreedte*/
+    padding-left: var(--marginLinksRechts);
+    padding-right: var(--marginLinksRechts);
+    margin-left: var(--negMarginLinksRechts);
+    margin-right: var(--negMarginLinksRechts);
+}
+
+#achtergrondEinde {
+    background: url(../images/blue-orange-footer.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: var(--achtergrondkleurEen);
+    /*Laat achtergrondafbeelding buiten div komen over volledige schermbreedte*/
+    padding-left: var(--marginLinksRechts);
+    padding-right: var(--marginLinksRechts);
+    margin-left: var(--negMarginLinksRechts);
+    margin-right: var(--negMarginLinksRechts);
+}
+
+html {
+    background-color: var(--achtergrondkleurEen);
+    scroll-behavior: smooth;
+}
+
+
+
+/*Basisopmaak + -opbouw volledige website (body)*/
+body {
+    color: var(--tekstkleur);
+    font-family: var(--tekstfontEen);
+    margin-left: var(--marginLinksRechts);
+    margin-right: var(--marginLinksRechts);
+}
+
+
+
+/*Verfijnen opmaak + opbouw hoofdtekst en secties*/
+header {
+    display: flex;
+    padding-top: var(--paddingBoven);
+    padding-bottom: var(--paddingOnder);
+    opacity: 0.9;
+}
+
+section {
+    padding-top: 20vw;
+}
+
+#sec_skills {
+    padding-bottom: 20vw;
+}
+
+#functie {
+    display: none;
+}
+
+
+
+/*Opmaak voor weergave elementen tijdens scrollen*/
+.weergave {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.weergave.actief {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+/*Witte lijn onder header + fixed positie bij scrollen*/
+header {
+    border-bottom: 1px solid var(--tekstkleur);
+    position: fixed;
+    width: 100%;
+    background-color: var(--achtergrondkleurEen);
+    /*Laat achtergrondkleur buiten div komen over volledige schermbreedte*/
+    padding-left: var(--marginLinksRechts);
+    padding-right: var(--marginLinksRechts);
+    margin-left: var(--negMarginLinksRechts);
+    margin-right: var(--negMarginLinksRechts);
+    z-index: 1;
+}
+
+
+
+/*Witruimte tussen naam en functie in header*/
+header div span:last-child {
+    margin-left: var(--marginLinksRechts);
+    cursor: default;
+}
+
+
+
+/*Duwt navigatiebalk naar rechts*/
+header div:last-child {
+    margin-left: auto;
+}
+
+
+
+/*Witte lijn bij hover over links navigatiebalk*/
+.nav_item {
+    background-color: transparent;
+    background: linear-gradient(#cccccc 0 0) center bottom / 0% 1px no-repeat;
+    transition: 0.3s linear;
+}
+
+.nav_item:hover {
+    background-size: 100% 1px;
+}
+
+
+
+/*Toepassen van font "migra" op naam-element*/
+#naam a {
+    font-family: var(--tekstfontTwee);
+}
+
+
+
+/*Sectie "about" centreren afbeelding + tekst*/
+#sec_about {
+    padding-top: 10vw;
+}
+
+#afbeeldingAbout {
+    display: block;
+    margin: auto;
+    width: 85%;
+}
+
+#tekst_about {
+    width: 85%;
+    cursor: default;
+    margin: auto;
+    text-align: center;
+    /*text-shadow: 1px 1px 0 rgb(80, 78, 78),
+               -1px -1px 0 rgb(80, 78, 78),
+               1px -1px 0 rgb(80, 78, 78),
+               -1px 1px 0 rgb(80, 78, 78);*/
+    background-color:rgb(1, 74, 189, 0.5);
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px var(--schaduwkleurEen);
+}
+
+#tekst_about h2 {
+    font-size: 300%;
+}
+
+#tekst_about p {
+    font-size: 125%;
+    text-transform: uppercase;
+}
+
+
+
+/*Opmaak + opbouw sectie "portfolio*/
+#sec_portfolioOverzicht {
+    width: 95%;
+    margin: auto;
+}
+
+#sec_portfolioOverzicht h2 {
+    font-size: 300%;
+    margin-bottom: 0rem;
+    cursor: default;
+    text-align: center;
+}
+
+#sec_portfolioOverzicht .demo {
+    display: flex;
+    flex-direction: column;
+}
+
+#titelDemoEen {
+    order: 1;
+}
+
+#linkDemoEen {
+    order: 2;
+}
+
+#titelDemoTwee {
+    order: 3;
+}
+
+#linkDemoTwee {
+    order: 4;
+}
+
+#titelDemoDrie {
+    order: 5;
+}
+
+#linkDemoDrie {
+    order: 6;
+}
+
+#titelDemoVier {
+    order: 7;
+}
+
+#linkDemoVier {
+    order: 8;
+}
+
+
+#sec_portfolioOverzicht h3 {
+    font-size: 170%;
+    text-align: center;
+}
+
+#sec_portfolioOverzicht p {
+    font-size: 125%;
+    text-align: center;
+}
+
+#afbeeldingScrum,
+#afbeeldingGroenten {
+    display: block;
+    margin-left: auto;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px var(--schaduwkleurEen);
+}
+
+#afbeeldingWood,
+#afbeeldingPlanten {
+    display: block;
+    margin-right: auto;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px var(--schaduwkleurEen);
+}
+
+#sec_portfolioOverzicht img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(0%);
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#sec_portfolioOverzicht img:hover {
+    transform: scale(0.9);
+}
+
+
+
+/*Opmaak + opbouw sectie "skills*/
+#sec_skills {
+    width: 100%;
+}
+
+#sec_skills h2 {
+    font-size: 300%;
+    margin-bottom: 0rem;
+    cursor: default;
+    text-align: center;
+}
+
+#sec_skills .gridContainer .gridItem1, #sec_skills .gridContainer .gridItem7 {
+    display: none;
+}
+
+#sec_skills .gridContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+
+
+
+
+/*Afbeelding draaien 360gr on hover*/
+#sec_skills .gridContainer img {
+    background-color: var(--tekstkleur);
+    border-radius: 10%;
+    margin-top: var(--marginBoven);
+    max-width: 85%;
+    height: auto;
+    transition: 0.5s ease;
+    margin: auto;
+    display: block;
+}
+
+#sec_skills .icoonKlein {
+    transition: 0.5s ease;
+}
+
+#sec_skills img:hover {
+    transform: rotate(360deg);
+}
+
+
+
+/*Opmaak + opbouw sectie "contact*/
+#sec_contact #connect {
+    font-size: 400%;
+    cursor: default;
+    text-align: center;
+}
+
+#sec_contact #mail {
+    display: block;
+    margin: auto;
+    font-size:110%;
+    text-align: center;
+}
+
+
+/*mailadres opmaak on hover
+#sec_contact #mail h1 {
+    position: relative;
+    background: linear-gradient(to right, black, black);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+
+#sec_contact #mail h1::before {
+    content: 'gudderspatrice@hotmail.com';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, black, black);
+
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+#sec_contact #mail h1:hover::before {
+    opacity: 1;
+}*/
+
+
+
+/*LinkedIn + Github afbeelding opmaak*/
+#sec_contact #mail img {
+    background-color: var(--tekstkleur);
+    border-radius: 20%;
+    width: 4rem;
+    height: auto;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    margin-top: var(--marginBoven);
+
+}
+
+#sec_contact #mail img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/*Opmaak + opbouw footer*/
+footer {
+    display: flex;
+    cursor: pointer;
+
+}
+
+footer p {
+    margin-left: auto;
+    margin-bottom: var(--marginOnder);
+    padding: 1rem;
+    border-top: 1px solid var(--tekstkleur);
+
+}
+
+
+/*Witte lijn bij hover over "credits"*/
+footer p {
+    background-color: transparent;
+    background: linear-gradient(#cccccc 0 0) center bottom / 0% 1px no-repeat;
+    transition: 0.3s linear;
+}
+
+footer p:hover {
+    background-size: 100% 1px;
+}
+
+
+
+/*Opmaak + opbouw section "Credits"*/
+
+#sec_credits {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 1;
+    right: 0;
+    bottom: 0;
+    background-color: var(--achtergrondkleurEen);
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    padding-left: var(--marginLinksRechts);
+    transform: translateX(100%);
+}
+
+#sec_credits .titel {
+    display: flex;
+    border-bottom: 1px solid var(--tekstkleur);
+    cursor: default;
+    font-size: larger;
+    padding-top: var(--paddingBoven);
+
+}
+
+#sec_credits .titel img {
+    width: 2rem;
+    height: auto;
+    margin-left: auto;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+#sec_credits .tekst {
+    margin-top: 1.5rem;
+    font-size: larger;
+}
+
+#sec_credits .tekst div {
+    margin-bottom: 1.5rem;
+}
+
+#sec_credits .tekst h4 {
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+#sec_credits .tekst p {
+    margin-bottom: 0.5rem;
+}
+
+#sec_credits .tekst:last-child {
+    cursor: default;
+}
+
+
+
+
+/*@media only screen and (min-width: 768px) {}*/
+/*Tijdelijke oplossing voor smartphone in landscape + tablet in portrait acceptabel te presenteren.
+Volwaardige oplossing media gebruiken met orientation landscape and portrait*/
+@media only screen and (min-width: 992px) {
+    /*For desktop*/
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+
+
+/*About*/     
+    #functie {
+        display: inline;
+    } 
+
+    #rowDesktop {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top:0%;
+    }
+
+    #tekst_about h2 {
+        font-size: 400%;
+    }
+    
+    #tekst_about p {
+        font-size: 150%;
+    }
+    
+    #tekst_about {
+        text-align: unset;
+        text-shadow: 1px 1px 0 rgb(80, 78, 78),
+               -1px -1px 0 rgb(80, 78, 78),
+               1px -1px 0 rgb(80, 78, 78),
+               -1px 1px 0 rgb(80, 78, 78);
+        background-color:unset;
+        border-radius: unset;
+        box-shadow: unset;
+        margin-top: -8vw;
+    }
+
+
+
+/*Portfolio*/    
+    #sec_portfolioOverzicht {
+        width: 85%;
+    }
+
+    #sec_portfolioOverzicht img {
+        width: 85%;
+    }
+
+    #sec_portfolioOverzicht .demo {
+        display: block;
+        text-align: right;
+    }
+
+    #sec_portfolioOverzicht h2 {
+        font-size: 400%;
+        text-align: unset;
+        margin-bottom: 2rem;
+    }
+
+    #sec_portfolioOverzicht h3 {
+        font-size: 250%;
+        text-align: unset;
+    }
+    
+    #sec_portfolioOverzicht p {
+        font-size: 175%;
+        text-align: unset;
+    }
+
+
+
+/*Skills*/ 
+    #sec_skills h2 {
+        font-size: 400%;
+        text-align: unset;
+    }
+
+    #sec_skills .gridContainer{
+        display: unset;
+    }
+
+    #sec_skills .gridContainer .gridItem1, #sec_skills .gridContainer .gridItem7 {
+        display: unset;
+    }
+
+    #sec_skills .gridContainer img {
+        max-width: 60%;
+    }
+
+
+
+/*Contact*/
+    #sec_contact {
+        padding-top: 10vw;
+    }
+
+    #sec_contact #connect {
+        font-size: 900%;
+        text-align: unset;
+    }
+    
+    #sec_contact #mail {
+        font-size: xx-large;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+    }
+
+    #sec_contact .row {
+        display: unset;
+    }
+
+
+/*Credits*/    
+    #sec_credits {
+        width: 30%;
+    }
+}
